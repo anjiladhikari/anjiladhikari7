@@ -4,26 +4,41 @@ import { Heart, Calendar, MapPin } from 'lucide-react';
 
 const Volunteer = () => {
     const volunteers = [
-        {
-            title: "Volunteer Developer",
-            organization: "Open Source Community",
-            location: "Remote",
-            period: "Jan 2023 - Present",
-            description: "Contributing to various open source projects and helping new developers get started with coding."
-        },
-        {
-            title: "Student Mentor",
+        
+         {
+            title: "Peer Support Network Mentor SEBE",
             organization: "Deakin University",
-            location: "Geelong, Victoria",
-            period: "July 2024 - Present",
-            description: "Mentoring undergraduate students in programming fundamentals and AI/ML concepts."
+            location: "Geelong, Victoria/Hybrid",
+            period: "June 2025-Aug 2025",
+            description: ""
         },
         {
-            title: "Hackathon Organizer",
-            organization: "Tech Community Nepal",
+            title: "Ambassador",
+            organization: "Study Geelong",
+            location: "Geelong, Victoria",
+            period: "Mar 2024- May 2025",
+            description: ""
+        },
+        {
+            title: "Volunteer ",
+            organization: "Acquaint",
+            location: "Remote USA",
+            period: "Apr 2023 - Present",
+            description: ""
+        },
+        {
+            title: "Volunteer",
+            organization: "Robotics Association of Nepal",
             location: "Kathmandu, Nepal",
-            period: "2021 - 2023",
-            description: "Organized and managed local hackathons to foster innovation and collaboration among young tech enthusiasts."
+            period: "Feb 2022 - 2023",
+            description: ""
+        },
+          {
+            title: "Volunteer",
+            organization: "IEEE Pulchowk Student Branch  ",
+            location: "Lalitpur, Nepal",
+            period: "Jan 2019 - Dec 2020",
+            description: ""
         }
     ];
 

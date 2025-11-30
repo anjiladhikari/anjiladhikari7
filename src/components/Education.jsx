@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 
 const Education = () => {
     const education = [
@@ -19,9 +19,18 @@ const Education = () => {
     ];
 
     const certifications = [
-        "Microsoft Certified: Azure AI Fundamentals",
-        "Microsoft Certified: Azure AI Engineer Associate",
-        "Bertelsmann Technology Scholarship 2021 for Machine Learning"
+        {
+            title: "Microsoft Certified: Azure AI Engineer Associate",
+            link: "https://learn.microsoft.com/en-us/users/anjiladhikari-2042/credentials/a8c856fd5814734e?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+        },
+        {
+            title: "Microsoft Certified: Azure AI Fundamentals",
+            link: "https://learn.microsoft.com/en-us/users/anjiladhikari-2042/credentials/43a751235d254ef8"
+        },
+        {
+            title: "Bertelsmann Technology Scholarship 2021 for Machine Learning",
+            link: null
+        }
     ];
 
     const container = {
@@ -106,8 +115,24 @@ const Education = () => {
                                         transition={{ delay: index * 0.1 }}
                                         className="flex items-start gap-3 text-[var(--text-color)]/80"
                                     >
-                                        <span className="mt-1.5 w-1.5 h-1.5 bg-secondary rounded-full flex-shrink-0" />
-                                        {cert}
+                                        <span className="mt-2 w-1.5 h-1.5 bg-secondary rounded-full flex-shrink-0" />
+                                        
+                                        {cert.link ? (
+                                            <a 
+                                                href={cert.link} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="hover:text-secondary transition-colors duration-200 group flex items-start gap-1"
+                                            >
+                                                <span className="group-hover:underline underline-offset-4 decoration-secondary/30">
+                                                    {cert.title}
+                                                </span>
+                                                {/* Removed opacity-0 and group-hover:opacity-100 to make it always visible */}
+                                                <ExternalLink size={14} className="mt-1 text-secondary/70" />
+                                            </a>
+                                        ) : (
+                                            <span>{cert.title}</span>
+                                        )}
                                     </motion.li>
                                 ))}
                             </ul>
