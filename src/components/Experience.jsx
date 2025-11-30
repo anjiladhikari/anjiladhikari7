@@ -15,11 +15,11 @@ const Experience = () => {
             title: "AI & ML Engineer",
             company: "DataByte",
             location: "Remote, Melbourne",
-            period: "March 2025 - Present",
+            period: "March 2025 - Oct 2025",
             description: "Engineered hallucination detection pipelines reducing factual errors by 20%."
         },
         {
-            title: "AI & ML Engineer",
+            title: "Machine Learning Engineer",
             company: "Fusemachine",
             location: "New York, USA (Remote)",
             period: "March 2022 - Sep 2023",
@@ -33,12 +33,20 @@ const Experience = () => {
             description: "Analyzed educational data from 100+ schools using Google Data Studio."
         },
         {
+            title: "Teaching Assistant",
+            company: "Fusemachine",
+            location: "Remote",
+            period: "Jan 2023 - Sep 2023",
+            description: "Oversaw curriculum, instruction, and recruitment for an international AI fellowship"
+        },
+        {
             title: "Content Creator",
             company: "Code Thulo",
             location: "Remote",
             period: "Oct 2021 - Present",
             description: "Technical content creator with 100+ articles on AI/ML."
         }
+        
     ];
 
     const container = {

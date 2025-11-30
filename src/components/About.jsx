@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/anjil.jpg';
+import coverImg from '../assets/cover anjil.jpg';
+
 
 const About = () => {
     return (
@@ -77,9 +79,9 @@ const About = () => {
                             className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 group"
                         >
                             <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                                <img src={profileImg} alt="Anjil Adhikari" className="w-full h-full object-cover opacity-80 mix-blend-overlay group-hover:scale-110 transition-transform duration-700" />
+                                <img src={coverImg} alt="Anjil Adhikari" className="w-full h-full object-cover opacity-90 mix-blend-overlay group-hover:scale-110 transition-transform duration-700" />
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-color)] to-transparent opacity-80"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-color)] to-transparent opacity-90"></div>
                             <div className="absolute bottom-6 left-6">
                                 <p className="text-white font-bold text-lg">Anjil Adhikari</p>
                                 <p className="text-primary text-sm">AI/ML Engineer</p>

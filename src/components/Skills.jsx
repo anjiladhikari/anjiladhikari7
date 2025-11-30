@@ -17,12 +17,12 @@ const Skills = () => {
         {
             title: "Libraries & Frameworks",
             icon: <Terminal className="w-6 h-6 text-pink-500" />,
-            skills: ["Scikit-learn", "TensorFlow", "Keras", "Pandas", "Numpy", "NLTK", "OpenCV", "LangChain", "React.js"]
+            skills: ["ADK","Pytorch","Scikit-learn", "TensorFlow", "Keras", "Pandas", "Numpy", "NLTK", "OpenCV", "LangChain", "React.js"]
         },
         {
             title: "Tools & Platforms",
             icon: <Server className="w-6 h-6 text-blue-500" />,
-            skills: ["Jupyter", "Google Colab", "Git", "Docker", "Azure", "Google Cloud", "Hugging Face", "VS Code"]
+            skills: ["Antigravity", "Cursor","Jupyter", "Google Colab", "Git", "Docker", "Azure", "Google Cloud", "Hugging Face", "VS Code"]
         }
     ];
 

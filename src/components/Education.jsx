@@ -8,7 +8,7 @@ const Education = () => {
             degree: "Master of Applied Artificial Intelligence",
             institution: "Deakin University",
             location: "Wurns Pond, Geelong, Victoria",
-            year: "2024 - Present"
+            year: "2024  - 2025"
         },
         {
             degree: "Bachelor Of Electrical Engineering",
