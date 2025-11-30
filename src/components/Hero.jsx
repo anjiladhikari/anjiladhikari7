@@ -150,9 +150,9 @@ const Hero = () => {
                     transition={{ delay: 0.5 }}
                     className="flex space-x-6 mb-12"
                 >
-                    <SocialLink href="https://github.com" icon={<Github />} />
-                    <SocialLink href="https://linkedin.com" icon={<Linkedin />} />
-                    <SocialLink href="https://twitter.com" icon={<Twitter />} />
+                    <SocialLink href="https://github.com/anjiladhikari" icon={<Github />} />
+                    <SocialLink href="https://www.linkedin.com/in/anjil7/" icon={<Linkedin />} />
+                    <SocialLink href="https://twitter.com/anjiladhikari07" icon={<Twitter />} />
                     <SocialLink href="mailto:anjil.adk@gmail.com" icon={<Mail />} />
                 </motion.div>
 

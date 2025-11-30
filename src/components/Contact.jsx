@@ -33,7 +33,7 @@ const Contact = () => {
                         <h3 className="text-2xl font-bold text-[var(--text-color)]">Contact Information</h3>
                         <div className="space-y-6">
                             <ContactItem icon={<Mail />} title="Email" value="anjil.adk@gmail.com" />
-                            <ContactItem icon={<Phone />} title="Phone" value="+61 452 663 945" />
+                            <ContactItem icon={<Phone />} title="Phone" value="+61XXXXXXXX" />
                             <ContactItem icon={<MapPin />} title="Location" value="Geelong, Victoria, Australia" />
                         </div>
                     </motion.div>
