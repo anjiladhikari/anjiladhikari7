@@ -13,22 +13,32 @@ const Contact = () => {
         setIsSubmitting(true);
         setStatus({ type: '', message: '' });
 
-    //    email js 
-        emailjs.sendForm(
+
+        // 1. Manually grab the data from the form
+        const currentForm = formRef.current;
+        const templateParams = {
+            user_name: currentForm.user_name.value,
+            user_email: currentForm.user_email.value,
+            subject: currentForm.subject.value,
+            message: currentForm.message.value,
+        };
+
+        // 2. Send the email
+        emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            formRef.current,
+            templateParams, // Pass the object we created above
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then((result) => {
                 setStatus({ type: 'success', message: 'Message sent successfully!' });
                 formRef.current.reset();
             }, (error) => {
+                console.error("EmailJS Error:", error); // Log the full error for debugging
                 setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
             })
             .finally(() => {
                 setIsSubmitting(false);
-                // Clear success message after 5 seconds
                 setTimeout(() => setStatus({ type: '', message: '' }), 5000);
             });
     };
@@ -36,10 +46,37 @@ const Contact = () => {
     return (
         <section id="contact" className="py-20 bg-[var(--bg-color)] relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* ... Header Section (Unchanged) ... */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">
+                        Get In Touch
+                    </h2>
+                    <p className="text-[var(--text-color)]/70 max-w-2xl mx-auto">
+                        Interested in collaborating or have a project in mind? Let's discuss how we can work together.
+                    </p>
+                </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* ... Contact Info Section (Unchanged) ... */}
+                    {/* Contact Info */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        className="space-y-8 bg-[var(--card-bg)] p-8 rounded-xl border border-[var(--border-color)] shadow-lg hover:shadow-[0_20px_50px_rgba(99,102,241,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-primary/5 transition-all duration-300"
+                    >
+                        <h3 className="text-2xl font-bold text-[var(--text-color)]">Contact Information</h3>
+                        <div className="space-y-6">
+                            <ContactItem icon={<Mail />} title="Email" value="anjil.adk@gmail.com" />
+                            <ContactItem icon={<Phone />} title="Phone" value="+61XXXXXXXX" />
+                            <ContactItem icon={<MapPin />} title="Location" value="Geelong, Victoria, Australia" />
+                        </div>
+                    </motion.div>
 
                     {/* Contact Form */}
                     <motion.div
@@ -73,7 +110,16 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            {/* ... Subject Input (Add name="subject") ... */}
+                            <div>
+                                <label className="block text-sm font-medium text-[var(--text-color)]/70 mb-2">Subject</label>
+                                <input
+                                    type="text"
+                                    name="subject" // Required for EmailJS
+                                    required
+                                    className="w-full px-4 py-3 rounded-lg bg-[var(--bg-color)]/50 border border-[var(--border-color)] text-[var(--text-color)] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
+                                    placeholder="Project Inquiry"
+                                />
+                            </div>
 
                             <div>
                                 <label className="block text-sm font-medium text-[var(--text-color)]/70 mb-2">Message</label>
@@ -118,3 +164,18 @@ const Contact = () => {
         </section>
     );
 };
+
+// This is the part that was missing in the previous snippet
+const ContactItem = ({ icon, title, value }) => (
+    <div className="flex items-start gap-4">
+        <div className="p-3 rounded-lg bg-[var(--card-bg)] text-primary">
+            {icon}
+        </div>
+        <div>
+            <h4 className="text-sm font-medium text-[var(--text-color)]/60">{title}</h4>
+            <p className="text-lg font-semibold text-[var(--text-color)]">{value}</p>
+        </div>
+    </div>
+);
+
+export default Contact;
