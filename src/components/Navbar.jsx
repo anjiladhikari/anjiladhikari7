@@ -41,7 +41,7 @@ const Navbar = () => {
         { name: 'Experience', to: 'experience' },
         { name: 'Education', to: 'education' },
         { name: 'Contact', to: 'contact' },
-        { name: 'Resource', href: 'https://github.com/anjiladhikari', external: true },
+        { name: 'Resource', href: '/resource', external: true },
         { name: 'Blogs', href: 'https://medium.com/@codethulo', external: true },
     ];
 
