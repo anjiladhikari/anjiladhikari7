@@ -41,6 +41,7 @@ const Navbar = () => {
         { name: 'Experience', to: 'experience' },
         { name: 'Education', to: 'education' },
         { name: 'Contact', to: 'contact' },
+        { name: 'Resource', href: 'https://github.com/anjiladhikari', external: true },
     ];
 
     return (
@@ -60,19 +61,32 @@ const Navbar = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.to}
-                                    smooth={true}
-                                    duration={500}
-                                    offset={-70}
-                                    className="relative group px-3 py-2 text-sm font-medium cursor-pointer transition-colors text-[var(--text-color)] hover:text-primary"
-                                    activeClass="text-primary"
-                                    spy={true}
-                                >
-                                    {link.name}
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
-                                </Link>
+                                link.external ? (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative group px-3 py-2 text-sm font-medium cursor-pointer transition-colors text-[var(--text-color)] hover:text-primary"
+                                    >
+                                        {link.name}
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                                    </a>
+                                ) : (
+                                    <Link
+                                        key={link.name}
+                                        to={link.to}
+                                        smooth={true}
+                                        duration={500}
+                                        offset={-70}
+                                        className="relative group px-3 py-2 text-sm font-medium cursor-pointer transition-colors text-[var(--text-color)] hover:text-primary"
+                                        activeClass="text-primary"
+                                        spy={true}
+                                    >
+                                        {link.name}
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                                    </Link>
+                                )
                             ))}
                             <button
                                 onClick={toggleTheme}
@@ -103,17 +117,30 @@ const Navbar = () => {
                 >
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.to}
-                                smooth={true}
-                                duration={500}
-                                offset={-70}
-                                onClick={() => setIsOpen(false)}
-                                className="text-[var(--text-color)] hover:text-primary block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                            >
-                                {link.name}
-                            </Link>
+                            link.external ? (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[var(--text-color)] hover:text-primary block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {link.name}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={link.name}
+                                    to={link.to}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-[var(--text-color)] hover:text-primary block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+                                >
+                                    {link.name}
+                                </Link>
+                            )
                         ))}
                         <button
                             onClick={() => {
