@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -61,19 +62,34 @@ const Navbar = () => {
 
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            {navLinks.map((link) => (
-                                link.external ? (
-                                    <a
-                                        key={link.name}
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="relative group px-3 py-2 text-sm font-medium cursor-pointer transition-colors text-[var(--text-color)] hover:text-primary"
-                                    >
-                                        {link.name}
-                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
-                                    </a>
-                                ) : (
+                            {navLinks.map((link) => {
+                                if (link.external) {
+                                    if (link.href.startsWith('/')) {
+                                        return (
+                                            <RouterLink
+                                                key={link.name}
+                                                to={link.href}
+                                                className="relative group px-3 py-2 text-sm font-medium cursor-pointer transition-colors text-[var(--text-color)] hover:text-primary"
+                                            >
+                                                {link.name}
+                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                                            </RouterLink>
+                                        );
+                                    }
+                                    return (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="relative group px-3 py-2 text-sm font-medium cursor-pointer transition-colors text-[var(--text-color)] hover:text-primary"
+                                        >
+                                            {link.name}
+                                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                                        </a>
+                                    );
+                                }
+                                return (
                                     <Link
                                         key={link.name}
                                         to={link.to}
@@ -87,8 +103,8 @@ const Navbar = () => {
                                         {link.name}
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
                                     </Link>
-                                )
-                            ))}
+                                );
+                            })}
                             <button
                                 onClick={toggleTheme}
                                 className="p-2 rounded-full hover:bg-[var(--card-bg)] transition-colors text-[var(--text-color)]"
@@ -117,19 +133,34 @@ const Navbar = () => {
                     className="md:hidden bg-[var(--bg-color)]/95 backdrop-blur-md shadow-xl"
                 >
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navLinks.map((link) => (
-                            link.external ? (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-[var(--text-color)] hover:text-primary block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {link.name}
-                                </a>
-                            ) : (
+                        {navLinks.map((link) => {
+                            if (link.external) {
+                                if (link.href.startsWith('/')) {
+                                    return (
+                                        <RouterLink
+                                            key={link.name}
+                                            to={link.href}
+                                            className="text-[var(--text-color)] hover:text-primary block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {link.name}
+                                        </RouterLink>
+                                    );
+                                }
+                                return (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[var(--text-color)] hover:text-primary block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </a>
+                                );
+                            }
+                            return (
                                 <Link
                                     key={link.name}
                                     to={link.to}
@@ -141,8 +172,8 @@ const Navbar = () => {
                                 >
                                     {link.name}
                                 </Link>
-                            )
-                        ))}
+                            );
+                        })}
                         <button
                             onClick={() => {
                                 toggleTheme();

@@ -44,12 +44,17 @@ const VisitorCounter = () => {
         fetchCount();
     }, []);
 
-    if (loading) return null;
+    if (loading) return (
+        <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
+            <Eye size={14} />
+            <span>Loading...</span>
+        </div>
+    );
 
     return (
         <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
             <Eye size={14} />
-            <span>{count !== null ? `${count.toLocaleString()} Views` : 'Waiting for the first view...'}</span>
+            <span>{count !== null ? `${count.toLocaleString()} Views` : 'Views'}</span>
         </div>
     );
 };
