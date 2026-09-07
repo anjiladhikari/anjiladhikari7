@@ -95,7 +95,7 @@ const Resources = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
                         Curated Resources
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">

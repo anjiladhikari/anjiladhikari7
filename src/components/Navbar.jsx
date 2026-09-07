@@ -60,7 +60,7 @@ const Navbar = () => {
                         <motion.span
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="text-2xl font-bold bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent cursor-pointer hover:opacity-80 transition-opacity"
+                            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent cursor-pointer hover:opacity-80 transition-opacity"
                         >
                             Anjil Adhikari
                         </motion.span>

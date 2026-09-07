@@ -77,7 +77,7 @@ const Experience = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white inline-block">
                         Professional Experience
                     </h2>
                 </motion.div>
@@ -95,7 +95,7 @@ const Experience = () => {
                                 {row.map((exp, index) => (
                                     <React.Fragment key={exp.title + exp.company}>
                                         {index > 0 && (
-                                            <div className="flex items-center justify-center shrink-0 text-secondary/70">
+                                            <div className="flex items-center justify-center shrink-0 text-primary/70">
                                                 <ArrowDown size={20} className="md:hidden" />
                                                 {rowIndex % 2 === 1
                                                     ? <ArrowLeft size={20} className="hidden md:block" />
@@ -105,11 +105,11 @@ const Experience = () => {
                                         <motion.div variants={item} className="flex-1 min-w-0">
                                             <motion.div
                                                 whileHover={{ scale: 1.02, y: -5 }}
-                                                className="h-full bg-[var(--card-bg)] p-6 rounded-xl border-l-4 border-secondary/50 hover:border-secondary transition-all duration-300 shadow-lg hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-secondary/5"
+                                                className="h-full bg-[var(--card-bg)] p-6 rounded-xl border-l-4 border-primary/50 hover:border-primary transition-all duration-300 shadow-lg hover:shadow-[0_20px_50px_rgba(37,99,235,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-primary/5"
                                             >
                                                 <div className="flex flex-col gap-2 mb-4">
                                                     <h3 className="text-xl font-bold text-[var(--text-color)]">{exp.title}</h3>
-                                                    <h4 className="text-lg text-secondary">{exp.company}</h4>
+                                                    <h4 className="text-lg text-primary">{exp.company}</h4>
                                                     <div className="flex flex-wrap gap-4 text-sm text-[var(--text-color)]/60">
                                                         <span className="flex items-center gap-1">
                                                             <Calendar size={14} />
@@ -130,7 +130,7 @@ const Experience = () => {
                                 ))}
                             </div>
                             {rowIndex < rows.length - 1 && (
-                                <div className={`flex justify-center text-secondary/70 ${rowIndex % 2 === 0 ? 'md:justify-end md:pr-[15%]' : 'md:justify-start md:pl-[15%]'}`}>
+                                <div className={`flex justify-center text-primary/70 ${rowIndex % 2 === 0 ? 'md:justify-end md:pr-[15%]' : 'md:justify-start md:pl-[15%]'}`}>
                                     <ArrowDown size={20} />
                                 </div>
                             )}

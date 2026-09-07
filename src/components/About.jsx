@@ -16,7 +16,7 @@ const About = () => {
 
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white inline-block">
                         About Me
                     </h2>
                     <p className="text-[var(--text-color)]/70 max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.02, y: -5 }}
-                        className="space-y-6 bg-[var(--card-bg)] p-8 rounded-xl border border-[var(--border-color)] shadow-lg hover:shadow-[0_20px_50px_rgba(99,102,241,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-primary/5 transition-all duration-300"
+                        className="space-y-6 bg-[var(--card-bg)] p-8 rounded-xl border border-[var(--border-color)] shadow-lg hover:shadow-[0_20px_50px_rgba(37,99,235,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-primary/5 transition-all duration-300"
                     >
                         <h3 className="text-2xl font-bold text-[var(--text-color)]">My Journey</h3>
                         <p className="text-[var(--text-color)]/80 leading-relaxed">
