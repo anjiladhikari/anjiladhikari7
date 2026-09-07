@@ -16,7 +16,7 @@ const Skills = () => {
         },
         {
             title: "Libraries & Frameworks",
-            icon: <Terminal className="w-6 h-6 text-pink-500" />,
+            icon: <Terminal className="w-6 h-6 text-primary" />,
             skills: ["ADK","Pytorch","Scikit-learn", "TensorFlow", "Keras", "Pandas", "Numpy", "NLTK", "OpenCV", "LangChain", "React.js"]
         },
         {
@@ -54,7 +54,7 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white inline-block">
                         Technical Skills
                     </h2>
                     <p className="text-[var(--text-color)]/70 max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ const Skills = () => {
                             key={index}
                             variants={item}
                             whileHover={{ y: -5 }}
-                            className="bg-[var(--card-bg)] backdrop-blur-sm rounded-xl p-6 border border-[var(--border-color)] hover:border-primary/50 transition-all duration-300 group shadow-lg hover:shadow-[0_20px_50px_rgba(99,102,241,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-primary/5"
+                            className="bg-[var(--card-bg)] backdrop-blur-sm rounded-xl p-6 border border-[var(--border-color)] hover:border-primary/50 transition-all duration-300 group shadow-lg hover:shadow-[0_20px_50px_rgba(37,99,235,0.15)] hover:bg-gradient-to-br hover:from-[var(--card-bg)] hover:to-primary/5"
                         >
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="p-3 rounded-lg bg-[var(--card-bg)] group-hover:bg-primary/20 transition-colors">
@@ -87,7 +87,7 @@ const Skills = () => {
                                 {category.skills.map((skill, idx) => (
                                     <motion.span
                                         key={idx}
-                                        whileHover={{ scale: 1.1, backgroundColor: "rgba(99, 102, 241, 0.2)", boxShadow: "0 0 20px rgba(99, 102, 241, 0.5)" }}
+                                        whileHover={{ scale: 1.1, backgroundColor: "rgba(37, 99, 235, 0.2)", boxShadow: "0 0 20px rgba(37, 99, 235, 0.5)" }}
                                         className="px-3 py-1 text-sm rounded-full bg-[var(--card-bg)] text-[var(--text-color)]/80 border border-[var(--border-color)] hover:border-primary/50 hover:text-[var(--text-color)] transition-all duration-300 cursor-default"
                                     >
                                         {skill}

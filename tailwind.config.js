@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1', // Indigo 500
-        secondary: '#a855f7', // Purple 500
+        primary: '#2563eb', // Blue 600
+        secondary: '#06b6d4', // Cyan 500
         dark: '#0f172a', // Slate 900
         light: '#f8fafc', // Slate 50
       },

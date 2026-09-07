@@ -47,10 +47,10 @@ const Hero = () => {
                     },
                     particles: {
                         color: {
-                            value: "#6366f1",
+                            value: "#2563eb",
                         },
                         links: {
-                            color: "#a855f7",
+                            color: "#2563eb",
                             distance: 150,
                             enable: true,
                             opacity: 0.5,
@@ -100,7 +100,7 @@ const Hero = () => {
                     className="mb-8 relative"
                 >
                     <motion.div
-                        whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(99, 102, 241, 0.5)" }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(37, 99, 235, 0.5)" }}
                         className="w-40 h-40 md:w-56 md:h-56 rounded-full p-1 bg-gradient-to-r from-primary to-secondary cursor-pointer"
                     >
                         <div className="w-full h-full rounded-full overflow-hidden bg-[var(--bg-color)]">
