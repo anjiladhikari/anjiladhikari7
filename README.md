@@ -75,7 +75,6 @@ src/
 
 ## Features
 
-- Dark / light mode toggle
 - Interactive particle background (click and hover effects)
 - Smooth scroll navigation
 - Contact form via EmailJS
